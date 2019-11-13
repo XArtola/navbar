@@ -11,6 +11,14 @@
 |
 */
 
+
+Route::get('/empleados', 'EmpleadoController@index')->name('empleados.index');
+
+
 Route::get('/', function () {
-    return view('index');
+    return view('proyectos.index');
+});
+
+Route::get('/', function () {
+    return view('departamentos.index');
 });
