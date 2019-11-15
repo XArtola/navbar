@@ -14,15 +14,17 @@
     <th>Fecha Inicio</th>
     <th>Fecha fin</th>
     <th>Horas estimadas</th>
+    <th>Empleado asignado</th>
   </tr>
   @foreach($listaProyectos as $proyecto)
   <tr>
-    <td>{{$proyecto->id}}</td>
+    <td><a href="{{route('empleados.show',$proyecto->id)}}">{{$proyecto->id}}</a></td>
     <td>{{$proyecto->nombre}}</td>
     <td>{{$proyecto->titulo}}</td>
     <td>{{$proyecto->fechainicio}}</td>
     <td>{{$proyecto->fechafin}}</td>
     <td>{{$proyecto->horasestimadas}}</td>
+    @isset($proyecto->empleado)<td><a href="{{route('empleados.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>@endisset
   </tr>
   @endforeach
 </table>

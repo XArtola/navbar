@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Empleado extends Model
 {
-    //
+    public function proyecto()
+    {
+
+        return $this->belongsTo('App\Models\Proyecto','id','empleado_id');
+    }
 }

@@ -13,4 +13,11 @@ class EmpleadoController extends Controller
 
         return view('empleados.index', ['listaEmpleados' => $listaEmpleados]);
     }
+
+    public function show($id)
+    {
+        $infoEmpleado = Empleado::find($id);
+
+        return view('empleados.info', ['infoEmpleado' => $infoEmpleado]);
+    }
 }

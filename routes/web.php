@@ -11,8 +11,14 @@
 |
 */
 
-
+/*EMPLEADOS */
 Route::get('/empleados', 'EmpleadoController@index')->name('empleados.index');
+Route::get('/empleados/{id}', 'EmpleadoController@show')->name('empleados.show');
+
+/*DEPARTAMENTOS */
 Route::get('/departamentos', 'DepartamentoController@index')->name('departamentos.index');
+
+/*DEPARTAMENTOS */
 Route::get('/proyectos', 'ProyectoController@index')->name('proyectos.index');
+Route::get('/proyectos/{id}', 'ProyectoController@show')->name('proyectos.show');
 

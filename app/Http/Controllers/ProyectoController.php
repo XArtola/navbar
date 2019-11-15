@@ -13,4 +13,12 @@ class ProyectoController extends Controller
 
         return view('proyectos.index', ['listaProyectos' => $listaProyectos]);
     }
+
+    public function show($id){
+
+        $infoProyecto = Proyecto::find($id);
+
+        return view('proyectos.info', ['infoProyecto' => $infoProyecto]);
+
+    }
 }

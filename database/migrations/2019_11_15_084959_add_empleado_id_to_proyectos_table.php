@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIdEmpleadoToProyectosTable extends Migration
+class AddEmpleadoIdToProyectosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,9 @@ class AddIdEmpleadoToProyectosTable extends Migration
     public function up()
     {
         Schema::table('proyectos', function (Blueprint $table) {
-            //
+            $table->integer('empleado_id')->nullable();
+
+            //$table->integer('empleado_id')->references('id')->on('empleados')-;
         });
     }
 
@@ -26,7 +28,7 @@ class AddIdEmpleadoToProyectosTable extends Migration
     public function down()
     {
         Schema::table('proyectos', function (Blueprint $table) {
-            //
+            $table->dropColumn('empleado_id');
         });
     }
 }
