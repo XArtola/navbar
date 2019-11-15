@@ -78,3 +78,4 @@ class EmpleadosTableSeeder extends Seeder
         ]);
     }
 }
+

@@ -13,9 +13,9 @@
             </div>
 
             <div class="links">
-                <a href="">Proyectos</a>
-                <a href="">Empleados</a>
-                <a href="">Departamentos</a>
+                <a href="{{route('proyectos.index')}}">Proyectos</a>
+                <a href="{{route('empleados.index')}}">Empleados</a>
+                <a href="{{route('departamentos.index')}}">Departamentos</a>
             </div>
             <hr><br><br>
             <div class="op">

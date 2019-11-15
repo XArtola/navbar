@@ -13,12 +13,6 @@
 
 
 Route::get('/empleados', 'EmpleadoController@index')->name('empleados.index');
+Route::get('/departamentos', 'DepartamentoController@index')->name('departamentos.index');
+Route::get('/proyectos', 'ProyectoController@index')->name('proyectos.index');
 
-
-Route::get('/', function () {
-    return view('proyectos.index');
-});
-
-Route::get('/', function () {
-    return view('departamentos.index');
-});
