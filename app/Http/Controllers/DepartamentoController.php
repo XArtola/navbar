@@ -14,4 +14,12 @@ class DepartamentoController extends Controller
 
         return view('departamentos.index', ['listaDepartamentos' => $listaDepartamentos]);
     }
+
+    public function show($id)
+    {
+
+        $infoDepartamento = Departamento::find($id);
+
+        return view('departamentos.index', ['infoDepartamento' => $infoDepartamento]);
+    }
 }
