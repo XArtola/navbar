@@ -10,12 +10,19 @@
   <tr>
     <th>Id</th>
     <th>Nombre</th>
+    <th>Empleado</th>
+
   </tr>
 
   @foreach($listaDepartamentos as $departamento)
   <tr>
     <td>{{$departamento->id}}</td>
     <td>{{$departamento->nombre}}</td>
+    @isset($departamento->empleados)
+    @foreach($departamento->empleados as $empleado)
+    <a>{{$empleado->nombre}}</a>
+    @endforeach
+    @endisset
   </tr>
   @endforeach
 </table>
