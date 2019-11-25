@@ -28,8 +28,16 @@ class ProyectoController extends Controller
         return view('proyectos.create');
     }
 
-    public function store($id)
+    public function store(Request $request)
     {
+
+        $proyecto = new Proyecto;
+        $proyecto->nombre = $request->input('nombre');
+        $proyecto->titulo = $request->input('titulo');
+        $proyecto->fechainicio = $request->input('fechainicio');
+        $proyecto->fechafin = $request->input('fechafin');
+        $proyecto->horasestimadas = $request->input('horasestimadas');
+        $proyecto->save();
 
         return redirect('/proyectos');
     }
