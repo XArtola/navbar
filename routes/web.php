@@ -18,7 +18,11 @@ Route::get('/empleados/{id}', 'EmpleadoController@show')->name('empleados.show')
 /*DEPARTAMENTOS */
 Route::get('/departamentos', 'DepartamentoController@index')->name('departamentos.index');
 
-/*DEPARTAMENTOS */
+/*PROYECTOS */
 Route::get('/proyectos', 'ProyectoController@index')->name('proyectos.index');
 Route::get('/proyectos/{id}', 'ProyectoController@show')->name('proyectos.show');
+Route::get('/proyectos/create', 'ProyectoController@create')->name('proyectos.create');
+Route::post('/proyectos', 'ProyectoController@store')->name('proyectos.store');
+
+
 
