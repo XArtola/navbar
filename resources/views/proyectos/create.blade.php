@@ -6,7 +6,7 @@
 
 <h2>Proyectos</h2>
 
-<form action="{{route('proyectos.create')}}" method="Post">
+<form action="{{route('proyectos.store')}}" method="Post">
   @csfr
 
   <label>Nombre</label>
