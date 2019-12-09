@@ -12,6 +12,9 @@ class EmpleadosTableSeeder extends Seeder
      */
     public function run()
     {
+
+        factory(App\Models\Empleado::class,1000)->create();
+        /*
         Empleado::insert([
 
             [
@@ -86,5 +89,7 @@ class EmpleadosTableSeeder extends Seeder
             ]
 
         ]);
+
+        */
     }
 }
