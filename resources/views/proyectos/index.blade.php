@@ -5,7 +5,7 @@
 @section('content')
 
 <h2>Proyectos</h2>
-<a href="{{route('proyectos.create')}}" >Añadir proyectos</a>
+<a href="{{route('proyectos.create')}}">Añadir proyectos</a>
 <table>
   <tr>
     <th>Id</th>
@@ -27,9 +27,15 @@
     <td>{{$proyecto->fechafin}}</td>
     <td>{{$proyecto->horasestimadas}}</td>
     @isset($proyecto->empleado)<td><a href="{{route('empleados.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>@endisset
-    <td><a href="{{route('proyectos.edit',['id', $proyecto->id])}}">Editar</a></td>
-    <td><a href="{{route('proyectos.destroy',['id', $proyecto->id])}}">Eliminar</a></td>
-
+    <td><a href="{{route('proyectos.edit', $proyecto->id)}}">Editar</a></td>
+    <td><a href="{{route('proyectos.destroy', $proyecto->id)}}">Eliminar</a></td>
+    <td>
+      <form action="{{route('proyectos.destroy', $proyecto->id)}}" method="post">
+        @method('DELETE')
+        @csrf
+        <input type="submit" name="delete" value="delete">
+      </form>
+    </td>
   </tr>
   @endforeach
 </table>

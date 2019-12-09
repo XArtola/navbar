@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ProyectoController extends Controller
 {
@@ -52,9 +53,8 @@ class ProyectoController extends Controller
 
     public function edit($id)
     {
-        //$user = User::where('username', $username)->first();
-        $proyecto = Proyecto::find($id)->first();
-        return view('proyectos.edit', compact('id', 'proyecto'));
+        $proyecto = Proyecto::where('id', $id)->first();
+        return view('proyectos.edit', ['proyecto'=>$proyecto]);
     }
 
     public function update(Request $request, $id)
@@ -72,9 +72,9 @@ class ProyectoController extends Controller
         $proyecto = Proyecto::find($id)->first();
         $proyecto->nombre = $request->nombre;
         $proyecto->titulo = $request->titulo;
-        $proyecto->fechaInicio = $request->fechaInicio;
-        $proyecto->fechaFin = $request->fechaFin;
-        $proyecto->horasEstimadas = $request->horasEstimadas;
+        $proyecto->fechainicio = $request->fechaInicio;
+        $proyecto->fechafin = $request->fechaFin;
+        $proyecto->horasestimadas = $request->horasEstimadas;
         $proyecto->update();
 
         return back();
@@ -83,5 +83,6 @@ class ProyectoController extends Controller
     public function destroy($id)
     {
         Proyecto::find($id)->delete();
+        return back();
     }
 }
