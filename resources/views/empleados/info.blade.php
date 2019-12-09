@@ -6,24 +6,12 @@
 
 <h2>Nombre de empleado: {{$infoEmpleado->nombre}}</h2>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Email</th>
-    <th>Telefono</th>
-    <th>Proyecto asignado</th>
-  </tr>
-
-  <tr>
-    <td>{{$infoEmpleado->id}}</td>
-    <td>{{$infoEmpleado->nombre}}</td>
-    <td>{{$infoEmpleado->apellido}}</td>
-    <td>{{$infoEmpleado->email}}</td>
-    <td>{{$infoEmpleado->telefono}}</td>
-    @isset($infoEmpleado->proyecto)<td>{{$infoEmpleado->proyecto->nombre}}</td>@endisset
-  </tr>
-</table>
-
+<ul>
+  <li>Id: {{$infoEmpleado->id}}</li>
+  <li>Nombre: {{$infoEmpleado->nombre}}</li>
+  <li>Apellido: {{$infoEmpleado->apellido}}</li>
+  <li>Email: {{$infoEmpleado->email}}</li>
+  <li>Telefono: {{$infoEmpleado->telefono}}</li>
+  @isset($infoEmpleado->proyecto)<li>Proyecto asignado: {{$infoEmpleado->proyecto->nombre}}</li>@endisset
+</ul>
 @endsection

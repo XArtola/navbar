@@ -5,7 +5,7 @@
 @section('content')
 
 <h2>Proyectos</h2>
-
+<a href="{{route('proyectos.create')}}" >Añadir proyectos</a>
 <table>
   <tr>
     <th>Id</th>
@@ -15,6 +15,8 @@
     <th>Fecha fin</th>
     <th>Horas estimadas</th>
     <th>Empleado asignado</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
   </tr>
   @foreach($listaProyectos as $proyecto)
   <tr>
@@ -25,6 +27,9 @@
     <td>{{$proyecto->fechafin}}</td>
     <td>{{$proyecto->horasestimadas}}</td>
     @isset($proyecto->empleado)<td><a href="{{route('empleados.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>@endisset
+    <td><a href="{{route('proyectos.edit',['id', $proyecto->id])}}">Editar</a></td>
+    <td><a href="{{route('proyectos.destroy',['id', $proyecto->id])}}">Eliminar</a></td>
+
   </tr>
   @endforeach
 </table>
