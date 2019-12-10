@@ -21,61 +21,71 @@ class EmpleadosTableSeeder extends Seeder
                 'nombre' => 'Xabier',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ],
             [
                 'nombre' => 'A',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ],
             [
                 'nombre' => 'B',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ],
             [
                 'nombre' => 'C',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ],
             [
                 'nombre' => 'D',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ],
             [
                 'nombre' => 'E',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ],
             [
                 'nombre' => 'F',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ],
             [
                 'nombre' => 'G',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ],
             [
                 'nombre' => 'H',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ],
             [
                 'nombre' => 'I',
                 'apellido' => 'Artola',
                 'email' => 'a@a.com',
-                'telefono' => '943362099'
+                'telefono' => '943362099',
+                'departamento_id' => 1
             ]
 
         ]);
@@ -83,4 +93,3 @@ class EmpleadosTableSeeder extends Seeder
         */
     }
 }
-
