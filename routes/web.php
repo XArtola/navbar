@@ -20,9 +20,14 @@ Route::get('/departamentos', 'DepartamentoController@index')->name('departamento
 
 /*PROYECTOS */
 Route::get('/proyectos', 'ProyectoController@index')->name('proyectos.index');
-Route::get('/proyectos/{id}', 'ProyectoController@show')->name('proyectos.show');
 Route::get('/proyectos/create', 'ProyectoController@create')->name('proyectos.create');
 Route::post('/proyectos', 'ProyectoController@store')->name('proyectos.store');
+Route::get('/proyectos/{id}', 'ProyectoController@show')->name('proyectos.show');
+Route::get('/proyectos/{id}/edit', 'ProyectoController@edit')->name('proyectos.edit');
+Route::put('/proyectos/{id}', 'ProyectoController@update')->name('proyectos.update');
+Route::delete('/proyectos/{id}', 'ProyectoController@destroy')->name('proyectos.destroy');
+
+
 
 
 

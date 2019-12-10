@@ -11,7 +11,9 @@ class ProyectosTableSeeder extends Seeder
      */
     public function run()
     {
-    
+
+        factory(App\Models\Proyecto::class,100)->create();
+    /*
         $fecha = date('Y/m/d');
   
         for ($i=0;$i<5;$i++) {
@@ -27,7 +29,7 @@ class ProyectosTableSeeder extends Seeder
                 'fechafin'  => $fechafin,
                 'horasestimadas' => rand(500,3000)
             ]);
-        }
+        }*/
     }
 
     public function down(){

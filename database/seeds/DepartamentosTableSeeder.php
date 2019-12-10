@@ -12,6 +12,10 @@ class DepartamentosTableSeeder extends Seeder
      */
     public function run()
     {
+
+        factory(App\Models\Departamento::class,10)->create();
+
+        /*
         Departamento::insert([
 
             [
@@ -24,6 +28,8 @@ class DepartamentosTableSeeder extends Seeder
                 'nombre' => 'Programación',
             ]
 
-        ]);
+        ]);*/
     }
+
+    
 }

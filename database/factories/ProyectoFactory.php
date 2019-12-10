@@ -7,10 +7,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Proyecto::class, function (Faker $faker) {
     return [
-        'nombre' => Str::random(10),
-        'titulo' => Str::random(20),
-        'fechainicio' => $fechainicio,
-        'fechafin'  => $fechafin,
-        'horasestimadas' => rand(500,3000)
+        'nombre' => $faker->domainWord,
+        'titulo' => $faker->catchPhrase,
+        'fechainicio' => $faker->dateTime($min='now',$timezone='UTC'),
+        'fechafin'  => $faker->dateTime($min='now',$timezone='UTC'),
+        'horasestimadas' => $faker->numberBetween(500,10000)
     ];
 });
