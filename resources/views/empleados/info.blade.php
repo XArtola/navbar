@@ -14,4 +14,10 @@
   <li>Telefono: {{$infoEmpleado->telefono}}</li>
   @isset($infoEmpleado->proyecto)<li>Proyecto asignado: {{$infoEmpleado->proyecto->nombre}}</li>@endisset
 </ul>
+<h2>Proyectos adjudicados</h2>
+<ul>
+  @foreach( $proyectos as $proyecto)
+  <li><a href="{{route('proyectos.show',[$proyecto->id])}}">{{$proyecto->nombre}}</a></li>
+  @endforeach
+</ul>
 @endsection

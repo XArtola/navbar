@@ -12,7 +12,7 @@ class ProyectosTableSeeder extends Seeder
     public function run()
     {
 
-        factory(App\Models\Proyecto::class,100)->create();
+        factory(App\Models\Proyecto::class,5)->create();
     /*
         $fecha = date('Y/m/d');
   

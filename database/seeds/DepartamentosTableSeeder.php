@@ -13,7 +13,7 @@ class DepartamentosTableSeeder extends Seeder
     public function run()
     {
 
-        factory(App\Models\Departamento::class,10)->create();
+        factory(App\Models\Departamento::class,3)->create();
 
         /*
         Departamento::insert([

@@ -86,20 +86,5 @@ class ProyectoController extends Controller
         return back();
     }
 
-    public function edit($id)
-    {
-        $infoProyecto = Proyecto::find($id);
-        return view('proyecto.edit', $infoProyecto);
-    }
-
-    public function update(Request $request)
-    {
-
-        return redirect('/proyectos');
-    }
-    public function destroy($id)
-    {
-
-        return redirect('/proyectos');
-    }
+   
 }

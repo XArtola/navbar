@@ -8,7 +8,6 @@
 
 <ul>
 
-  <li></li>
   <li>Id: {{$infoProyecto->id}}</li>
   <li>Nombre: {{$infoProyecto->nombre}}</li>
   <li>Titulo: {{$infoProyecto->titulo}}</li>
@@ -18,7 +17,11 @@
   @isset($infoProyecto->empleado)<li>Empleado asignado: {{$infoProyecto->empleado->nombre}}</li>@endisset
 
 </ul>
-
-
+<h2>Empleados adjudicados</h2>
+<ul>
+@foreach( $empleados as $empleado)
+<li><a href="{{route('empleado.show',[$empleado->id])}}">{{$empleado->nombre}}</a></li>
+@endforeach
+</ul>
 
 @endsection
