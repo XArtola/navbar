@@ -18,9 +18,14 @@ class Empleado extends Model
         return $this->belongsToMany('App\Models\Proyecto')->withPivot('fechainicio', 'fechafin');
     }
 
-    //El departamento del que es jefe el empleado
     public function departamento()
     {
-        return $this->belongsTo('App\Models\Departamento','id', 'jefe_id');
+        return $this->belongsTo('App\Models\Departamento');
+    }
+
+    //El departamento del que es jefe el empleado
+    public function jefeDepartamento()
+    {
+        return $this->belongsTo('App\Models\Departamento', 'id', 'jefe_id');
     }
 }

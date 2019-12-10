@@ -13,7 +13,9 @@
   <li>Email: {{$infoEmpleado->email}}</li>
   <li>Telefono: {{$infoEmpleado->telefono}}</li>
   @isset($infoEmpleado->proyecto)<li>Proyecto asignado: {{$infoEmpleado->proyecto->nombre}}</li>@endisset
-  @isset($infoEmpleado->departamento)<li>Es jefe del dpt: {{$infoEmpleado->departamento->nombre}}</li>@endisset
+  @isset($infoEmpleado->departamento)<li><a href="{{route('departamentos.show',[$infoEmpleado->departamento->id])}}">{{$infoEmpleado->departamento->nombre}}</a></li>@endisset
+  @isset($infoEmpleado->jefeDepartamento)<li>Es jefe del dpt: {{$infoEmpleado->jefeDepartamentof->nombre}}</li>@endisset
+
 
 </ul>
 <h2>Proyectos adjudicados</h2>
