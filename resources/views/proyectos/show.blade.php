@@ -19,7 +19,7 @@
 </ul>
 <h2>Empleados adjudicados</h2>
 <ul>
-@foreach( $empleados as $empleado)
+@foreach($infoProyecto->empleados as $empleado)
 <li><a href="{{route('empleado.show',[$empleado->id])}}">{{$empleado->nombre}}</a></li>
 @endforeach
 </ul>

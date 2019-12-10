@@ -9,6 +9,6 @@ $factory->define(Departamento::class, function (Faker $faker) {
     return [     
      
             'nombre' => $faker->cityPrefix,
-    
+            'jefe_id' =>$faker->numberBetween(1,10)
     ];
 });

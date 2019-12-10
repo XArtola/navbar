@@ -13,6 +13,8 @@
   <li>Email: {{$infoEmpleado->email}}</li>
   <li>Telefono: {{$infoEmpleado->telefono}}</li>
   @isset($infoEmpleado->proyecto)<li>Proyecto asignado: {{$infoEmpleado->proyecto->nombre}}</li>@endisset
+  @isset($infoEmpleado->departamento)<li>Es jefe del dpt: {{$infoEmpleado->departamento->nombre}}</li>@endisset
+
 </ul>
 <h2>Proyectos adjudicados</h2>
 <ul>

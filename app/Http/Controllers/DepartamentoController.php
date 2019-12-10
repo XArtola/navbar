@@ -18,8 +18,9 @@ class DepartamentoController extends Controller
     public function show($id)
     {
 
-        $infoDepartamento = Departamento::find($id);
+        $departamento = Departamento::find($id);
+        $jefe = Departamento::find($id)->jefe;
 
-        return view('departamentos.index', ['infoDepartamento' => $infoDepartamento]);
+        return view('departamentos.show', compact('departamento','jefe'));
     }
 }
