@@ -28,6 +28,11 @@ Route::get('/proyectos/{id}/edit', 'ProyectoController@edit')->name('proyectos.e
 Route::put('/proyectos/{id}', 'ProyectoController@update')->name('proyectos.update');
 Route::delete('/proyectos/{id}', 'ProyectoController@destroy')->name('proyectos.destroy');
 
+/*LISTADOS*/
+
+Route::get('/listados/{tipo}', 'ListadoController@index')->name('listados.index');
+
+
 
 /*
 GET 	    /photos 	            index 	    photos.index
