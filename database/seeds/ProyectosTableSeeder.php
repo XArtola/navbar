@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Proyecto;
+
 class ProyectosTableSeeder extends Seeder
 {
     /**
@@ -13,6 +14,10 @@ class ProyectosTableSeeder extends Seeder
     {
 
         factory(App\Models\Proyecto::class,5)->create();
+        DB::table('proyectos')->where('id', 1)->update(['empleado_id' => 2]);
+        DB::table('proyectos')->where('id', 3)->update(['empleado_id' => 4]);
+        DB::table('proyectos')->where('id', 5)->update(['empleado_id' => 6]);
+
     /*
         $fecha = date('Y/m/d');
   

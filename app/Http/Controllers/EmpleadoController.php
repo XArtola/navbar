@@ -18,6 +18,6 @@ class EmpleadoController extends Controller
     {
         $infoEmpleado = Empleado::find($id);
         $proyectos = Empleado::find($id)->proyectos;
-        return view('empleados.info', ['infoEmpleado' => $infoEmpleado, 'proyectos' => $proyectos]);
+        return view('empleados.show', ['infoEmpleado' => $infoEmpleado, 'proyectos' => $proyectos]);
     }
 }

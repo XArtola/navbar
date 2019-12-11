@@ -26,7 +26,7 @@
     <td>{{$proyecto->fechainicio}}</td>
     <td>{{$proyecto->fechafin}}</td>
     <td>{{$proyecto->horasestimadas}}</td>
-    @isset($proyecto->empleado)<td><a href="{{route('empleados.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>@endisset
+    <td>@isset($proyecto->empleado)<a href="{{route('empleados.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a>@endisset</td>
     <td><a href="{{route('proyectos.edit', $proyecto->id)}}">Editar</a></td>
     <td><a href="{{route('proyectos.destroy', $proyecto->id)}}">Eliminar</a></td>
     <td>

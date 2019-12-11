@@ -29,6 +29,8 @@ class DepartamentosTableSeeder extends Seeder
             ]
 
         ]);*/
+
+
     }
 
     

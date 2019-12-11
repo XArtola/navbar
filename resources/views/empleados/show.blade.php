@@ -20,7 +20,7 @@
 </ul>
 <h2>Proyectos adjudicados</h2>
 <ul>
-  @foreach( $proyectos as $proyecto)
+  @foreach( $infoEmpleado->proyectos as $proyecto)
   <li><a href="{{route('proyectos.show',[$proyecto->id])}}">{{$proyecto->nombre}}</a></li>
   @endforeach
 </ul>
