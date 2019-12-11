@@ -18,9 +18,13 @@ class ListadoController extends Controller
             $listado = Empleado::doesntHave('proyecto')->get();
         }
         if ($tipo == 3) {
+            /* TERMINAR
             $listado = Empleado::where('proyecto');
             $empleados = Empleado::All();
-            $listado = $empleados->wherePivot('fechainicio', '<', now())->get();
+            $listado = $empleados->pivot->;
+
+            ->whereBetween('votes', [1, 100])->get();
+            */
         }
         return view('listados.index', compact('listado'));
     }
