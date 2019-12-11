@@ -14,6 +14,8 @@
 /*EMPLEADOS */
 Route::get('/empleados', 'EmpleadoController@index')->name('empleados.index');
 Route::get('/empleados/{id}', 'EmpleadoController@show')->name('empleados.show');
+//Inserción de colaboración de empleado en proyecto
+Route::post('/empleados', 'EmpleadoController@store')->name('empleados.store');
 
 /*DEPARTAMENTOS */
 Route::get('/departamentos', 'DepartamentoController@index')->name('departamentos.index');
@@ -43,4 +45,3 @@ GET 	    /photos/{photo}/edit 	edit 	    photos.edit
 PUT/PATCH 	/photos/{photo} 	    update 	    photos.update
 DELETE 	    /photos/{photo} 	    destroy 	photos.destroy
 */
-
