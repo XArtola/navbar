@@ -15,8 +15,8 @@
             </div>
 
             <div class="links bg-dark p-4 rounded-pill">
-                <a class="text-light" href="{{route('proyectos.index')}}"><img class="navbar-brand" style="width: 50px; height:50px" src="{{asset('assets/img/logo2.jpg')}}"></a>
-                <a class="text-light" href="{{route('proyectos.index')}}">INICIO</a>
+                <a class="text-light" href="{{route('home')}}"><img class="navbar-brand" style="width: 50px; height:50px" src="{{asset('assets/img/logo2.jpg')}}"></a>
+                <a class="text-light" href="{{route('home')}}">INICIO</a>
                 <a class="text-light" href="{{route('proyectos.index')}}">Proyectos</a>
                 <a class="text-light" href="{{route('empleados.index')}}">Empleados</a>
                 <a class="text-light" href="{{route('departamentos.index')}}">Departamentos</a>

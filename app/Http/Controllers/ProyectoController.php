@@ -27,8 +27,8 @@ class ProyectoController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'titulo' => 'required|string|max:255',
-            'fechaInicio' => 'required|date|after:fechaFin',
-            'fechaFin' => 'required|date',
+            'fechaInicio' => 'required|date',
+            'fechaFin' => 'required|date|after:fechaFin',
             'horasEstimadas' => 'required|numeric',
 
         ]);
@@ -54,30 +54,28 @@ class ProyectoController extends Controller
     public function edit($id)
     {
         $proyecto = Proyecto::where('id', $id)->first();
-        return view('proyectos.edit', ['proyecto'=>$proyecto]);
+        return view('proyectos.edit', ['proyecto' => $proyecto]);
     }
 
     public function update(Request $request, $id)
     {
 
         $request->validate([
-            'nombre' => 'same:old_nombre',
+
             'titulo' => 'required|string|max:255',
             'fechaInicio' => 'required|date',
             'fechaFin' => 'required|date|after:fechaInicio',
             'horasEstimadas' => 'required|numeric',
-
         ]);
 
-        $proyecto = Proyecto::find($id)->first();
-        $proyecto->nombre = $request->nombre;
+        $proyecto = Proyecto::find($id);
+
         $proyecto->titulo = $request->titulo;
         $proyecto->fechainicio = $request->fechaInicio;
         $proyecto->fechafin = $request->fechaFin;
         $proyecto->horasestimadas = $request->horasEstimadas;
-        $proyecto->update();
-
-        return back();
+        $proyecto->save();
+        return redirect()->route('proyectos.show', ['id' => $request->id]);
     }
 
     public function destroy($id)
@@ -85,6 +83,4 @@ class ProyectoController extends Controller
         Proyecto::find($id)->delete();
         return back();
     }
-
-   
 }

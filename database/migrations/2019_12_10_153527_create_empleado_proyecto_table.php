@@ -20,8 +20,8 @@ class CreateEmpleadoProyectoTable extends Migration
             $table->date('fechainicio');
             $table->date('fechafin');
             $table->timestamps();
-            $table->foreign('empleado_id')->references('id')->on('empleados');
-            $table->foreign('proyecto_id')->references('id')->on('proyectos');
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
+            $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
         });
     }
 

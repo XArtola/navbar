@@ -4,9 +4,9 @@
 
 @section('content')
 
-<h2>Departamentos</h2>
+<h2 class="display-4 pb-4">Departamentos</h2>
 
-<table>
+<table class="text-center">
   <tr>
     <th>Id</th>
     <th>Nombre</th>

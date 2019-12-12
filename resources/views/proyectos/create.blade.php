@@ -4,50 +4,52 @@
 
 @section('content')
 
-
+<h1 class="display-4 pb-4">Nuevo proyecto</h1>
 <form action="{{route('proyectos.store')}}" method="post">
     @csrf
-    <div class="form-group">
-        <label>Nombre</label><br>
+    <div class="form-group text-center">
+        <label class="lead">Nombre</label><br>
         <input type="text" name="nombre" value="{{old('nombre')}}">
         @if ($errors->has('nombre'))
-        <p>{{ $errors->first('nombre') }}</p>
+        <p class="text-danger lead font-weight-bold">{{ $errors->first('nombre') }}</p>
         @endif
     </div>
 
-    <div class="form-group">
-        <label>Titulo</label><br>
+    <div class="form-group text-center">
+        <label class="lead">Titulo</label><br>
         <input type="text" name="titulo" value="{{old('titulo')}}">
         @if ($errors->has('titulo'))
-        <p>{{ $errors->first('titulo') }}</p>
+        <p class="text-danger lead font-weight-bold">{{ $errors->first('titulo') }}</p>
         @endif
     </div>
 
-    <div class="form-group">
-        <label>Fecha inicio</label><br>
+    <div class="form-group text-center">
+        <label class="lead">Fecha inicio</label><br>
         <input type="date" name="fechaInicio" value="{{old('fechaInicio')}}">
         @if ($errors->has('fechaInicio'))
-        <p>{{ $errors->first('fechaInicio') }}</p>
+        <p class="text-danger lead font-weight-bold">{{ $errors->first('fechaInicio') }}</p>
         @endif
     </div>
 
-    <div class="form-group">
-        <label>Fecha fin</label><br>
+    <div class="form-group text-center">
+        <label class="lead">Fecha fin</label><br>
         <input type="date" name="fechaFin" value="{{old('fechaFin')}}">
         @if ($errors->has('fechaFin'))
-        <p>{{ $errors->first('fechaFin') }}</p>
+        <p class="text-danger lead font-weight-bold">{{ $errors->first('fechaFin') }}</p>
         @endif
     </div>
 
-    <div class="form-group">
-        <label>Horas estimadas</label><br>
+    <div class="form-group text-center">
+        <label class="lead">Horas estimadas</label><br>
         <input type="number" name="horasEstimadas" value="{{old('horasEstimadas')}}">
         @if ($errors->has('horasEstimadas'))
-        <p>{{ $errors->first('horasEstimadas') }}</p>
+        <p class="text-danger lead font-weight-bold">{{ $errors->first('horasEstimadas') }}</p>
         @endif
     </div>
-
-    <button type="submit">Insertar</button>
+    
+    <div class="form-group text-right">
+        <button class="btn btn-primary text-white" type="submit">Insertar</button>
+    </div>
 </form>
 
 

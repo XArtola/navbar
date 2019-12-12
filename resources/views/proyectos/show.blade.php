@@ -14,10 +14,10 @@
   <li>Fecha Inicio: {{$infoProyecto->fechainicio}}</li>
   <li>Fecha fin: {{$infoProyecto->fechafin}}</li>
   <li>Horas estimadas: {{$infoProyecto->horasestimadas}}</li>
-  @isset($infoProyecto->empleado)<li>Empleado asignado: {{$infoProyecto->empleado->nombre}}</li>@endisset
+  @isset($infoProyecto->empleado)<li>Empleado responsable: <a href="{{route('empleados.show',$infoProyecto->empleado->id)}}">{{$infoProyecto->empleado->nombre}}</a></li>@endisset
 
 </ul>
-<h2>Empleados adjudicados</h2>
+<h2>Empleados colaboradores</h2>
 <ul>
 @foreach($infoProyecto->empleados as $empleado)
 <li><a href="{{route('empleados.show',[$empleado->id])}}">{{$empleado->nombre}}</a></li>

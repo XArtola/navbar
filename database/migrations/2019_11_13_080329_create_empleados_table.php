@@ -17,7 +17,7 @@ class CreateEmpleadosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('email',50);
+            $table->string('email',150);
             $table->string('telefono');
             $table->timestamps();
         });

@@ -13,12 +13,14 @@ class ProyectosTableSeeder extends Seeder
     public function run()
     {
 
-        factory(App\Models\Proyecto::class,5)->create();
-        DB::table('proyectos')->where('id', 1)->update(['empleado_id' => 2]);
-        DB::table('proyectos')->where('id', 3)->update(['empleado_id' => 4]);
+        factory(App\Models\Proyecto::class, 5)->create();
+        DB::table('proyectos')->where('id', 1)->update(['empleado_id' => 2, 'fechafin'=>'2020-02-17']);
+        DB::table('proyectos')->where('id', 2)->update(['empleado_id' => 8]);
+        DB::table('proyectos')->where('id', 3)->update(['empleado_id' => 4, 'fechafin'=>'2021-12-31']);
+        DB::table('proyectos')->where('id', 4)->update(['empleado_id' => 1]);
         DB::table('proyectos')->where('id', 5)->update(['empleado_id' => 6]);
 
-    /*
+        /*
         $fecha = date('Y/m/d');
   
         for ($i=0;$i<5;$i++) {
@@ -37,10 +39,6 @@ class ProyectosTableSeeder extends Seeder
         }*/
     }
 
-    public function down(){
-
-    
-    }
-
+    public function down()
+    { }
 }
-    

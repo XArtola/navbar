@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', function () {
+	return view('home');
+})->name('home');
+
 /*EMPLEADOS */
 Route::get('/empleados', 'EmpleadoController@index')->name('empleados.index');
 Route::get('/empleados/{id}', 'EmpleadoController@show')->name('empleados.show');

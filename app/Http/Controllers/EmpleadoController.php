@@ -27,8 +27,8 @@ class EmpleadoController extends Controller
     {
         $request->validate([
 
-            'fechaInicio' => 'required|date|after:fechaFin',
-            'fechaFin' => 'required|date',
+            'fechaInicio' => 'required|date',
+            'fechaFin' => 'required|date|after:fechaInicio',
 
         ]);
 

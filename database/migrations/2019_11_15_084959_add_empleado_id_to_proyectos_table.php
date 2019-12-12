@@ -14,7 +14,8 @@ class AddEmpleadoIdToProyectosTable extends Migration
     public function up()
     {
         Schema::table('proyectos', function (Blueprint $table) {
-            $table->integer('empleado_id')->nullable();
+            $table->unsignedBigInteger('empleado_id')->nullable();
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
 
             //$table->integer('empleado_id')->references('id')->on('empleados')-;
         });
