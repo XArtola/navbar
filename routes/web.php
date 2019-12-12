@@ -20,6 +20,10 @@ Route::post('/empleados', 'EmpleadoController@store')->name('empleados.store');
 /*DEPARTAMENTOS */
 Route::get('/departamentos', 'DepartamentoController@index')->name('departamentos.index');
 Route::get('/departamentos/{id}', 'DepartamentoController@show')->name('departamentos.show');
+//Muestra formulario para insertar empleados que serán empleados de un departamento o jefes
+Route::get('/departamentos/{id}/manage','DepartamentoController@manage')->name('departamentos.manage');
+//Inserta el empleado como jefe de departamento o parte del departamento en la bd
+Route::post('/departamentos/setEmpleado','DepartamentoController@setEmpleado')->name('departamentos.setEmpleado');
 
 /*PROYECTOS */
 Route::get('/proyectos', 'ProyectoController@index')->name('proyectos.index');

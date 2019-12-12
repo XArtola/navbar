@@ -10,12 +10,14 @@ class ListadoController extends Controller
 {
     public function index($tipo)
     {
-        $listado = "";
         if ($tipo == 1) {
-            $listado = Proyecto::where('fechafin', '>', now())->get();
+            $listaProyectos = Proyecto::where('fechafin', '>', now())->get();
+            return view('proyectos.index',compact('listaProyectos'));
         }
         if ($tipo == 2) {
-            $listado = Empleado::doesntHave('proyecto')->get();
+            $listaEmpleados = Empleado::doesntHave('proyecto')->get();
+            return view('empleados.index',compact('listaEmpleados'));
+
         }
         if ($tipo == 3) {
             /* TERMINAR
@@ -26,6 +28,6 @@ class ListadoController extends Controller
             ->whereBetween('votes', [1, 100])->get();
             */
         }
-        return view('listados.index', compact('listado'));
+        //return view('listados.index', compact('listado'));
     }
 }
