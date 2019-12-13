@@ -4,24 +4,23 @@
 
 @section('content')
 
-<h2>Nombre de empleado: {{$infoEmpleado->nombre}}</h2>
+<h2>Empleado {{$infoEmpleado->nombre}}</h2>
 
-<ul>
-  <li>Id: {{$infoEmpleado->id}}</li>
-  <li>Nombre: {{$infoEmpleado->nombre}}</li>
-  <li>Apellido: {{$infoEmpleado->apellido}}</li>
-  <li>Email: {{$infoEmpleado->email}}</li>
-  <li>Telefono: {{$infoEmpleado->telefono}}</li>
-  @isset($infoEmpleado->proyecto)<li>Responsable del proyecto: <a href="{{route('proyectos.show',[$infoEmpleado->proyecto->id])}}">{{$infoEmpleado->proyecto->nombre}}</a></li>@endisset
-  @isset($infoEmpleado->departamento)<li>Pertenece al departamento: <a href="{{route('departamentos.show',[$infoEmpleado->departamento->id])}}">{{$infoEmpleado->departamento->nombre}}</a></li>@endisset
-  @isset($infoEmpleado->jefeDepartamento)<li>Dirige el departamento: <a href="{{route('departamentos.show',[$infoEmpleado->jefeDepartamento->id])}}">{{$infoEmpleado->jefeDepartamento->nombre}}</a></li>@endisset
-
-
+<ul class="list-unstyled pl-4">
+  <li><span class="font-weight-bold text-uppercase">Id:</span> {{$infoEmpleado->id}}</li>
+  <li><span class="font-weight-bold text-uppercase">Nombre:</span> {{$infoEmpleado->nombre}}</li>
+  <li><span class="font-weight-bold text-uppercase">Apellido:</span> {{$infoEmpleado->apellido}}</li>
+  <li><span class="font-weight-bold text-uppercase">Email:</span> {{$infoEmpleado->email}}</li>
+  <li><span class="font-weight-bold text-uppercase">Telefono:</span> {{$infoEmpleado->telefono}}</li>
+  @isset($infoEmpleado->proyecto)<li><span class="font-weight-bold text-uppercase">Responsable del proyecto:</span> <a href="{{route('proyectos.show',[$infoEmpleado->proyecto->id])}}">{{$infoEmpleado->proyecto->nombre}}</a></li>@endisset
+  @isset($infoEmpleado->departamento)<li><span class="font-weight-bold text-uppercase">Pertenece al departamento:</span> <a href="{{route('departamentos.show',[$infoEmpleado->departamento->id])}}">{{$infoEmpleado->departamento->nombre}}</a></li>@endisset
+  @isset($infoEmpleado->jefeDepartamento)<li><span class="font-weight-bold text-uppercase">Dirige el departamento:</span> <a href="{{route('departamentos.show',[$infoEmpleado->jefeDepartamento->id])}}">{{$infoEmpleado->jefeDepartamento->nombre}}</a></li>@endisset
 </ul>
+
 <h2>Proyectos en los que colabora</h2>
-<ul>
+<ul class="list-unstyled pl-4">
   @foreach( $infoEmpleado->proyectos as $proyecto)
-  <li>Proyecto: <a href="{{route('proyectos.show',[$proyecto->id])}}">{{$proyecto->nombre}}</a> | Inicio colaboración: {{$proyecto->pivot->fechainicio}} | Fin colaboración: {{$proyecto->pivot->fechafin}}</li>
+  <li><span class="font-weight-bold text-uppercase">Proyecto:<span> <a href="{{route('proyectos.show',[$proyecto->id])}}">{{$proyecto->nombre}}</a> | Inicio colaboración: {{$proyecto->pivot->fechainicio}} | Fin colaboración: {{$proyecto->pivot->fechafin}}</li>
   @endforeach
 </ul>
 

@@ -12,22 +12,26 @@ class ListadoController extends Controller
     {
         if ($tipo == 1) {
             $listaProyectos = Proyecto::where('fechafin', '>', now())->get();
-            return view('proyectos.index',compact('listaProyectos'));
+            return view('proyectos.index', compact('listaProyectos'));
         }
+
         if ($tipo == 2) {
             $listaEmpleados = Empleado::doesntHave('proyecto')->get();
-            return view('empleados.index',compact('listaEmpleados'));
-
+            return view('empleados.index', compact('listaEmpleados'));
         }
+        
         if ($tipo == 3) {
-            /* TERMINAR
-            $listado = Empleado::where('proyecto');
-            $empleados = Empleado::All();
-            $listado = $empleados->pivot->;
+            $listaEmpleados = Empleado::whereHas('proyectos', function ($query) {
 
-            ->whereBetween('votes', [1, 100])->get();
-            */
+                $query->havingRaw('Count(*) > 1');
+
+            })->whereHas('proyectos', function ($query) {
+
+                $query->whereDate('empleado_proyecto.fechafin', '>','2020-01-01');
+                
+            })->get();
+
+            return view('empleados.index', compact('listaEmpleados'));
         }
-        //return view('listados.index', compact('listado'));
     }
 }

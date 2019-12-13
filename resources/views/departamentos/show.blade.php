@@ -6,11 +6,11 @@
 
 <h2>Departamento {{$departamento->nombre}}</h2>
 
-<ul>
-  <li>Id: {{$departamento->id}}</li>
-  <li>Nombre: {{$departamento->nombre}}</li>
+<ul class="list-unstyled pl-4">
+  <li><span class="font-weight-bold text-uppercase">Id</span> {{$departamento->id}}</li>
+  <li><span class="font-weight-bold text-uppercase">Nombre:</span> {{$departamento->nombre}}</li>
  <!-- <li>Empleado: {{$departamento->nombre}}</li>-->
-  <li>Jefe: <a href="{{route('empleados.show',[$departamento->empleado->id])}}">{{$departamento->empleado->nombre}}</a></li>
+  <li><span class="font-weight-bold text-uppercase">Jefe:</span> <a href="{{route('empleados.show',[$departamento->empleado->id])}}">{{$departamento->empleado->nombre}}</a></li>
 </ul>
 
 <h3>Empleados que pertenecen al departamento</h3>

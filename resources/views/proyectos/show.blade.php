@@ -4,17 +4,17 @@
 
 @section('content')
 
-<h2>Proyecto: {{$infoProyecto->nombre}}</h2>
+<h2>Proyecto {{$infoProyecto->nombre}}</h2>
 
-<ul>
+<ul class="list-unstyled pl-4">
 
-  <li>Id: {{$infoProyecto->id}}</li>
-  <li>Nombre: {{$infoProyecto->nombre}}</li>
-  <li>Titulo: {{$infoProyecto->titulo}}</li>
-  <li>Fecha Inicio: {{$infoProyecto->fechainicio}}</li>
-  <li>Fecha fin: {{$infoProyecto->fechafin}}</li>
-  <li>Horas estimadas: {{$infoProyecto->horasestimadas}}</li>
-  @isset($infoProyecto->empleado)<li>Empleado responsable: <a href="{{route('empleados.show',$infoProyecto->empleado->id)}}">{{$infoProyecto->empleado->nombre}}</a></li>@endisset
+  <li><span class="font-weight-bold text-uppercase">Id:</span> {{$infoProyecto->id}}</li>
+  <li><span class="font-weight-bold text-uppercase">Nombre:</span> {{$infoProyecto->nombre}}</li>
+  <li><span class="font-weight-bold text-uppercase">Titulo:</span> {{$infoProyecto->titulo}}</li>
+  <li><span class="font-weight-bold text-uppercase">Fecha Inicio:</span> {{$infoProyecto->fechainicio}}</li>
+  <li><span class="font-weight-bold text-uppercase">Fecha fin:</span> {{$infoProyecto->fechafin}}</li>
+  <li><span class="font-weight-bold text-uppercase">Horas estimadas:</span> {{$infoProyecto->horasestimadas}}</li>
+  @isset($infoProyecto->empleado)<li><span class="font-weight-bold text-uppercase">Empleado responsable:</span> <a href="{{route('empleados.show',$infoProyecto->empleado->id)}}">{{$infoProyecto->empleado->nombre}}</a></li>@endisset
 
 </ul>
 <h2>Empleados colaboradores</h2>
