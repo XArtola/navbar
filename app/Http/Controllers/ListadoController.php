@@ -27,7 +27,7 @@ class ListadoController extends Controller
 
             })->whereHas('proyectos', function ($query) {
 
-                $query->whereDate('empleado_proyecto.fechafin', '>','2020-01-01');
+                $query->whereDate('empleado_proyecto.fechafin', '>', now());
                 
             })->get();
 
